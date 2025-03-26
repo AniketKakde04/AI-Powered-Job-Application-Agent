@@ -14,7 +14,8 @@ This project is an AI-powered job application assistant that automates resume pa
    cd AI-Job-Agent
 
 ## Install dependencies
-2. pip install -r requirements.txt
+2.  ```sh 
+    pip install -r requirements.txt
 
 ## Add a .env file with your LinkedIn credentials:
 3. LINKEDIN_USERNAME=your_email
@@ -28,7 +29,10 @@ This project is an AI-powered job application assistant that automates resume pa
 
 This ensures that anyone who downloads the project knows exactly how to set it up and run it. ✅
 
-### **2. Add and Upload README.md**
+## License
+This project is under the MIT License.
+
+### Add and Upload README.md**
 ```sh
 git add README.md
 git commit -m "Added README file"
