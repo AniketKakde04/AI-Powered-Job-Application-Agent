@@ -18,22 +18,20 @@ This project is an AI-powered job application assistant that automates resume pa
     pip install -r requirements.txt
 
 ## Add a .env file with your LinkedIn credentials:
-3. LINKEDIN_USERNAME=your_email
+3. ```sh
+    LINKEDIN_USERNAME=your_email
    LINKEDIN_PASSWORD=your_password
    GOOGLE_API_KEY=your_api_key
 
 ## Run the application:
-4. python app.py
+4. ```sh
+    python app.py
 
-5. Open http://127.0.0.1:5000/ in your browser.
+5. ```sh
+    Open http://127.0.0.1:5000/ in your browser.
 
 This ensures that anyone who downloads the project knows exactly how to set it up and run it. ✅
 
 ## License
 This project is under the MIT License.
 
-### Add and Upload README.md**
-```sh
-git add README.md
-git commit -m "Added README file"
-git push origin main
