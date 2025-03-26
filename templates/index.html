@@ -1,0 +1,68 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Launchpad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-brand">Career Launchpad</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Jobs</a>
+            <a href="#">Profile</a>
+            <a href="#">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="split-container">
+        <!-- Left Side - Upload Section -->
+        <div class="left-pane">
+            <section class="upload-section">
+                <h2>Upload Your Resume</h2>
+                <p class="subtitle">Supported formats: PDF, DOCX</p>
+                <form method="POST" enctype="multipart/form-data" class="upload-form">
+                    <div class="drop-zone">
+                        <div class="upload-icon">+</div>
+                        <p class="upload-instructions">
+                            Drag & Drop or<br>
+                            Click to Upload
+                        </p>
+                        <input type="file" name="resume" accept=".pdf,.docx" required>
+                    </div>
+                    <button type="submit" class="analyze-btn">Analyze Resume</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Right Side - Skills Section -->
+        <div class="right-pane">
+            {% if skills %}
+            <section class="skills-section">
+                <h2>Your Core Competencies</h2>
+                <div class="skills-grid">
+                    {% for skill in skills %}
+                    <div class="skill-card">
+                        {{ skill }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <form action="/start-search" method="POST">
+                    <button type="submit" class="launch-btn">Launch Smart Search</button>
+                </form>
+            </section>
+            {% else %}
+            <div class="empty-state">
+                <div class="plus-icon">+</div>
+                <p>Skills will appear here<br>after resume upload</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

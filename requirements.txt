@@ -1,0 +1,7 @@
+flask
+python-dotenv
+PyPDF2
+python-docx
+browser-use
+langchain-google-genai
+playwright
