@@ -33,4 +33,4 @@ def start_search():
     return "AI job search initiated! Check the automated browser window."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, use_reloader=False)

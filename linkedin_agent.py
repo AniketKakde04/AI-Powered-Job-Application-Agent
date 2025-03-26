@@ -8,7 +8,7 @@ load_dotenv()
 
 async def job_search_agent(skills):
     browser_config = BrowserConfig(headless=False)
-
+    browser = Browser(config=browser_config)
     agent = Agent(
          task=f"""1. Navigate to https://www.linkedin.com/login
 2. Login with {os.getenv('LINKEDIN_EMAIL')} and {os.getenv('LINKEDIN_PASSWORD')}
