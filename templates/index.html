@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,58 +10,52 @@
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-brand">Career Launchpad</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Jobs</a>
-            <a href="#">Profile</a>
-            <a href="#">Resources</a>
+        <div class="nav-menu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#jobs" class="nav-link">Jobs</a>
+            <a href="#profile" class="nav-link">Profile</a>
+            <a href="#resources" class="nav-link">Resources</a>
+            <button class="menu-toggle" aria-label="Toggle mobile menu">
+                <span>&#9776;</span>
+            </button>
         </div>
     </nav>
 
     <!-- Main Container -->
-    <div class="split-container">
+    <div class="container">
         <!-- Left Side - Upload Section -->
-        <div class="left-pane">
+        <div class="resume-upload-container">
             <section class="upload-section">
                 <h2>Upload Your Resume</h2>
                 <p class="subtitle">Supported formats: PDF, DOCX</p>
                 <form method="POST" enctype="multipart/form-data" class="upload-form">
-                    <div class="drop-zone">
-                        <div class="upload-icon">+</div>
-                        <p class="upload-instructions">
-                            Drag & Drop or<br>
-                            Click to Upload
-                        </p>
-                        <input type="file" name="resume" accept=".pdf,.docx" required>
+                    <div class="drop-zone" id="dropZone">
+                        <input type="file" id="fileInput" accept=".pdf,.docx" class="file-input" />
+                        <div class="drop-zone-content">
+                            <div class="upload-icon">📄</div>
+                            <p class="upload-instructions">
+                                Drag & Drop or<br>
+                                Click to Upload Resume
+                            </p>
+                        </div>
+                        <div class="file-preview" id="filePreview"></div>
                     </div>
-                    <button type="submit" class="analyze-btn">Analyze Resume</button>
+                    <button id="analyzeBtn" class="analyze-btn" disabled>Analyze Resume</button>
                 </form>
             </section>
         </div>
 
         <!-- Right Side - Skills Section -->
-        <div class="right-pane">
-            {% if skills %}
-            <section class="skills-section">
-                <h2>Your Core Competencies</h2>
-                <div class="skills-grid">
-                    {% for skill in skills %}
-                    <div class="skill-card">
-                        {{ skill }}
-                    </div>
-                    {% endfor %}
+        <div class="skills-container">
+            <section class="skills-section" id="skillsSection">
+                <div class="empty-state">
+                    <div class="plus-icon">+</div>
+                    <p>Skills will appear here<br>after resume upload</p>
                 </div>
-                <form action="/start-search" method="POST">
-                    <button type="submit" class="launch-btn">Launch Smart Search</button>
-                </form>
             </section>
-            {% else %}
-            <div class="empty-state">
-                <div class="plus-icon">+</div>
-                <p>Skills will appear here<br>after resume upload</p>
-            </div>
-            {% endif %}
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
